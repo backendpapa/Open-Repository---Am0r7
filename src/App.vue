@@ -14,7 +14,10 @@
       </div>
 
       <v-spacer></v-spacer>
-
+      <v-btn @click="crash" outlined color="white">
+        CRASH
+      </v-btn>
+      <v-spacer></v-spacer>
       <v-btn
         href="https://github.com/backendpapa"
         target="_blank"
@@ -41,6 +44,11 @@ export default {
   data: () => ({
     //
   }),
+  methods:{
+   crash(){
+      this.$store.commit("crash")
+   }
+  }
 };
 </script>
 <style>
