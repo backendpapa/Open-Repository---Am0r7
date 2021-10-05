@@ -2,8 +2,9 @@
   <div>
     <div class="block animate__animated animate__fadeIn">
      <v-container>
+  
         <v-row style="height:88.5vh;color:white" class="" no-gutters align="center" justify="center">
-      <v-col cols="12" xl="6" lg="6" class="animate__animated animate__fadeIn animate__slower">
+      <!-- <v-col cols="12" xl="6" lg="6" class="animate__animated animate__fadeIn animate__slower">
         <p style="font-weight:bold" class="text-h2 animate__animated animate__fadeInLeft">The <span style="color:#5CAB90">world's</span> most powerful exchange service</p>
         <p style="font-size:17px;margin-right:20%">Get the most accurate market data, alerts,conversions,tools and more - all on this platform</p>
         <v-row no-gutters>
@@ -11,8 +12,8 @@
           <v-btn style="text-transform:none;" class="ml-3 text-caption" height="39" color="#5CAB90" dark large>Try now!  </v-btn>
           <v-spacer></v-spacer>
         </v-row>
-      </v-col>
-      <v-col cols="12" xl="6" lg="6">
+      </v-col> -->
+      <v-col cols="12" xl="12" lg="12">
         
     <!-- <v-row  no-gutters align="center" justify="center"> -->
       <v-row class="animate__animated animate__fadeIn animate__slow" v-if="currency.length==0" align="center" justify="center" style="height:30vh">
@@ -28,6 +29,7 @@
             </div>
           <v-spacer></v-spacer>
       </v-row>
+      
   <v-simple-table v-else  class="card animate__animated animate__tada"  >
     <template v-slot:default>
       <thead>
@@ -40,16 +42,108 @@
           <th>EUR</th>
           <th>CHF</th>
           <th>NZD</th>
-          <th></th>
+          
         </tr>
       </thead>
       <tbody>
          <tr
         >
-          <td>USD<span class="font-weight-bold">AUD</span></td>
-          <td >{{currency["USDAUD"]}}</td>
+          <td class="font-weight-bold">USD</td>
+          <td class="text-left" >{{currency["USDAUD"]}}</td>
+          <td class="text-left" >{{currency["USDUSD"]}}</td>
+          <td class="text-left" >{{currency["USDCAD"]}}</td>
+           <td class="text-left" >{{currency["USDSGD"]}}</td>
+            <td class="text-left" >{{currency["USDEUR"]}}</td>
+             <td class="text-left" >{{currency["USDCHF"]}}</td>
+              <td class="text-left" >{{currency["USDNZD"]}}</td>
+        </tr>
+         <tr
+        >
+          <td class="font-weight-bold">AUD</td>
+          <td class="text-left" >{{aud["AUD"]}}</td>
+           <td class="text-left" >{{aud["USD"]}}</td>
+            <td class="text-left" >{{aud["CAD"]}}</td>
+             <td class="text-left" >{{aud["SGD"]}}</td>
+              <td class="text-left" >{{aud["EUR"]}}</td>
+               <td class="text-left" >{{aud["CHF"]}}</td>
+                <td class="text-left" >{{aud["NZD"]}}</td>
+          
+        </tr>
+         <tr
+        >
+          <td class="font-weight-bold">CAD</td>
+          <td class="text-left" >{{cad["AUD"]}}</td>
+           <td class="text-left" >{{cad["USD"]}}</td>
+            <td class="text-left" >{{cad["CAD"]}}</td>
+             <td class="text-left" >{{cad["SGD"]}}</td>
+              <td class="text-left" >{{cad["EUR"]}}</td>
+               <td class="text-left" >{{cad["CHF"]}}</td>
+                <td class="text-left" >{{cad["NZD"]}}</td>
+          
+        </tr>
+         <tr
+        >
+          <td class="font-weight-bold">SGD</td>
+          <td class="text-left" >{{sgd["AUD"]}}</td>
+           <td class="text-left" >{{sgd["USD"]}}</td>
+            <td class="text-left" >{{sgd["CAD"]}}</td>
+             <td class="text-left" >{{sgd["SGD"]}}</td>
+              <td class="text-left" >{{sgd["EUR"]}}</td>
+               <td class="text-left" >{{sgd["CHF"]}}</td>
+                <td class="text-left" >{{sgd["NZD"]}}</td>
+          
         </tr>
         <tr
+        >
+          <td class="font-weight-bold">EUR</td>
+          <td class="text-left" >{{eur["AUD"]}}</td>
+           <td class="text-left" >{{eur["USD"]}}</td>
+            <td class="text-left" >{{eur["CAD"]}}</td>
+             <td class="text-left" >{{eur["SGD"]}}</td>
+              <td class="text-left" >{{eur["EUR"]}}</td>
+               <td class="text-left" >{{eur["CHF"]}}</td>
+                <td class="text-left" >{{eur["NZD"]}}</td>
+          
+        </tr>
+        <tr
+        >
+          <td class="font-weight-bold">CHF</td>
+          <td class="text-left" >{{chf["AUD"]}}</td>
+           <td class="text-left" >{{chf["USD"]}}</td>
+            <td class="text-left" >{{chf["CAD"]}}</td>
+             <td class="text-left" >{{chf["SGD"]}}</td>
+              <td class="text-left" >{{chf["EUR"]}}</td>
+               <td class="text-left" >{{chf["CHF"]}}</td>
+                <td class="text-left" >{{chf["NZD"]}}</td>
+          
+        </tr>
+        <tr
+        >
+          <td class="font-weight-bold">NZD</td>
+          <td class="text-left" >{{nzd["AUD"]}}</td>
+           <td class="text-left" >{{nzd["USD"]}}</td>
+            <td class="text-left" >{{nzd["CAD"]}}</td>
+             <td class="text-left" >{{nzd["SGD"]}}</td>
+              <td class="text-left" >{{nzd["EUR"]}}</td>
+               <td class="text-left" >{{nzd["CHF"]}}</td>
+                <td class="text-left" >{{nzd["NZD"]}}</td>
+          
+        </tr>
+        <tr>
+          <td class="text-center">Median</td>
+          <td class="text-left">{{currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"]}}</td>
+          <td class="text-left">{{currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"]}}</td>
+          <td class="text-left">{{currency["USDCAD"]+aud["CAD"]+cad["CAD"]+sgd["CAD"]+eur["CAD"]+chf["CAD"]+nzd["CAD"]}}</td>
+          <td class="text-left">{{currency["USDSGD"]+aud["SGD"]+cad["SGD"]+sgd["SGD"]+eur["SGD"]+chf["SGD"]+nzd["SGD"]}}</td>
+          <td class="text-left">{{currency["USDEUR"]+aud["EUR"]+cad["EUR"]+sgd["EUR"]+eur["EUR"]+chf["EUR"]+nzd["EUR"]}}</td>
+          <td class="text-left">{{currency["USDCHF"]+aud["CHF"]+cad["CHF"]+sgd["CHF"]+eur["CHF"]+chf["CHF"]+nzd["CHF"]}}</td>
+          <td class="text-left">{{currency["USDNZD"]+aud["NZD"]+cad["NZD"]+sgd["NZD"]+eur["NZD"]+chf["NZD"]+nzd["NZD"]}}</td>
+
+        <td class="font-weight-bold">
+          {{(((currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"])+(currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"])+(currency["USDCAD"]+aud["CAD"]+cad["CAD"]+sgd["CAD"]+eur["CAD"]+chf["CAD"]+nzd["CAD"])+(currency["USDSGD"]+aud["SGD"]+cad["SGD"]+sgd["SGD"]+eur["SGD"]+chf["SGD"]+nzd["SGD"])+(currency["USDEUR"]+aud["EUR"]+cad["EUR"]+sgd["EUR"]+eur["EUR"]+chf["EUR"]+nzd["EUR"])+(currency["USDCHF"]+aud["CHF"]+cad["CHF"]+sgd["CHF"]+eur["CHF"]+chf["CHF"]+nzd["CHF"])+(currency["USDNZD"]+aud["NZD"]+cad["NZD"]+sgd["NZD"]+eur["NZD"]+chf["NZD"]+nzd["NZD"]))/7).toFixed(5)}}
+        </td>
+        </tr>
+        <!-- <tr
         >
           <td >USD<span class="font-weight-bold">USD</span></td>
           <td></td>
@@ -112,7 +206,7 @@
           <td>Total:7</td>
           <td>Total:7</td>
           <td class="font-weight-bold" ><span class="text-caption">Total of Media:</span> {{((currency["USDUSD"]+currency["USDAUD"]+currency["USDCAD"]+currency["USDSGD"]+currency["USDEUR"]+currency["USDCHF"]+currency["USDNZD"])/7).toFixed(5)}}</td>
-        </tr>
+        </tr> -->
         
       
       </tbody>
@@ -133,7 +227,13 @@ import axios from 'axios';
     name: 'Home',
     data(){
       return {
-        currency:[]
+        currency:[],
+        aud:[],
+        cad:[],
+        sgd:[],
+        eur:[],
+        chf:[],
+        nzd:[]
       }
     },
 
@@ -143,6 +243,25 @@ import axios from 'axios';
     mounted(){
       axios.get('https://stoc3.herokuapp.com/').then(res=>{
         this.currency=res.data.quotes
+      })
+      axios.get('https://stoc3.herokuapp.com/data/aud').then(res=>{
+        this.aud=res.data.rates
+      })
+      axios.get('https://stoc3.herokuapp.com/data/cad').then(res=>{
+        this.cad=res.data.rates
+      })
+      axios.get('https://stoc3.herokuapp.com/data/sgd').then(res=>{
+        this.sgd=res.data.rates
+      })
+      axios.get('https://stoc3.herokuapp.com/data/eur').then(res=>{
+        this.eur=res.data.rates
+      })
+      axios.get('https://stoc3.herokuapp.com/data/chf').then(res=>{
+        this.chf=res.data.rates
+      })
+
+      axios.get('https://stoc3.herokuapp.com/data/nzd').then(res=>{
+        this.nzd=res.data.rates
       })
     }
   }
