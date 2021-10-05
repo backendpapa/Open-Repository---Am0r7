@@ -2,7 +2,7 @@
   <div>
     <div class="block animate__animated animate__fadeIn">
      <v-container>
-        <v-row style="height:85.8vh;color:white" class="" no-gutters align="center" justify="center">
+        <v-row style="height:88.5vh;color:white" class="" no-gutters align="center" justify="center">
       <v-col cols="12" xl="6" lg="6" class="animate__animated animate__fadeIn animate__slower">
         <p style="font-weight:bold" class="text-h2 animate__animated animate__fadeInLeft">The <span style="color:#5CAB90">world's</span> most powerful exchange service</p>
         <p style="font-size:17px;margin-right:20%">Get the most accurate market data, alerts,conversions,tools and more - all on this platform</p>
@@ -15,7 +15,7 @@
       <v-col cols="12" xl="6" lg="6">
         
     <!-- <v-row  no-gutters align="center" justify="center"> -->
-      <v-row class="animate__animated animate__fadeIn animate__slow" v-if="currency==[]" align="center" justify="center" style="height:30vh">
+      <v-row class="animate__animated animate__fadeIn animate__slow" v-if="currency.length==0" align="center" justify="center" style="height:30vh">
           <v-spacer></v-spacer>
             <div >
               <p class="text-center"> 
@@ -28,7 +28,7 @@
             </div>
           <v-spacer></v-spacer>
       </v-row>
-  <v-simple-table v-else dense class="card animate__animated animate__tada"  >
+  <v-simple-table v-else  class="card animate__animated animate__tada"  >
     <template v-slot:default>
       <thead>
         <tr>
@@ -40,6 +40,7 @@
           <th>EUR</th>
           <th>CHF</th>
           <th>NZD</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -68,7 +69,7 @@
           <td></td>
           <td></td>
           <td></td>
-          <td >{{currency["USDSDG"]}}</td>
+          <td >{{currency["USDSGD"]}}</td>
         </tr>
          <tr
         >
@@ -102,8 +103,15 @@
         </tr>
         <tr
         >
-          <td class="green--text font-weight-bold">Total</td>
-          <td class="font-weight-bold" >{{((currency["USDUSD"]+currency["USDAUD"]+currency["USDCAD"]+currency["USDSDG"]+currency["USDEUR"]+currency["USDCHF"]+currency["USDNZD"])/7).toFixed(5)}}</td>
+          <td class="green--text font-weight-bold">MEDIA</td>
+          <td>Total:7</td>
+          <td>Total:7</td>
+          <td>Total:7</td>
+          <td>Total:7</td>
+          <td>Total:7</td>
+          <td>Total:7</td>
+          <td>Total:7</td>
+          <td class="font-weight-bold" ><span class="text-caption">Total of Media:</span> {{((currency["USDUSD"]+currency["USDAUD"]+currency["USDCAD"]+currency["USDSGD"]+currency["USDEUR"]+currency["USDCHF"]+currency["USDNZD"])/7).toFixed(5)}}</td>
         </tr>
         
       
