@@ -35,8 +35,8 @@
       <thead>
         <tr>
           <th></th>
-          <th>AUD</th>
           <th>USD</th>
+          <th>AUD</th>
           <th>CAD</th>
           <th>SGD</th>
           <th>EUR</th>
@@ -49,8 +49,9 @@
          <tr
         >
           <td class="font-weight-bold">USD</td>
-          <td class="text-left" >{{currency["USDAUD"]}}</td>
+          
           <td class="text-left" >{{currency["USDUSD"]}}</td>
+          <td class="text-left" >{{currency["USDAUD"]}}</td>
           <td class="text-left" >{{currency["USDCAD"]}}</td>
            <td class="text-left" >{{currency["USDSGD"]}}</td>
             <td class="text-left" >{{currency["USDEUR"]}}</td>
@@ -60,8 +61,9 @@
          <tr
         >
           <td class="font-weight-bold">AUD</td>
-          <td class="text-left" >{{aud["AUD"]}}</td>
+          
            <td class="text-left" >{{aud["USD"]}}</td>
+           <td class="text-left" >{{aud["AUD"]}}</td>
             <td class="text-left" >{{aud["CAD"]}}</td>
              <td class="text-left" >{{aud["SGD"]}}</td>
               <td class="text-left" >{{aud["EUR"]}}</td>
@@ -72,8 +74,9 @@
          <tr
         >
           <td class="font-weight-bold">CAD</td>
-          <td class="text-left" >{{cad["AUD"]}}</td>
+          
            <td class="text-left" >{{cad["USD"]}}</td>
+           <td class="text-left" >{{cad["AUD"]}}</td>
             <td class="text-left" >{{cad["CAD"]}}</td>
              <td class="text-left" >{{cad["SGD"]}}</td>
               <td class="text-left" >{{cad["EUR"]}}</td>
@@ -84,8 +87,9 @@
          <tr
         >
           <td class="font-weight-bold">SGD</td>
-          <td class="text-left" >{{sgd["AUD"]}}</td>
+          
            <td class="text-left" >{{sgd["USD"]}}</td>
+           <td class="text-left" >{{sgd["AUD"]}}</td>
             <td class="text-left" >{{sgd["CAD"]}}</td>
              <td class="text-left" >{{sgd["SGD"]}}</td>
               <td class="text-left" >{{sgd["EUR"]}}</td>
@@ -96,8 +100,9 @@
         <tr
         >
           <td class="font-weight-bold">EUR</td>
-          <td class="text-left" >{{eur["AUD"]}}</td>
+          
            <td class="text-left" >{{eur["USD"]}}</td>
+           <td class="text-left" >{{eur["AUD"]}}</td>
             <td class="text-left" >{{eur["CAD"]}}</td>
              <td class="text-left" >{{eur["SGD"]}}</td>
               <td class="text-left" >{{eur["EUR"]}}</td>
@@ -108,8 +113,9 @@
         <tr
         >
           <td class="font-weight-bold">CHF</td>
-          <td class="text-left" >{{chf["AUD"]}}</td>
+         
            <td class="text-left" >{{chf["USD"]}}</td>
+            <td class="text-left" >{{chf["AUD"]}}</td>
             <td class="text-left" >{{chf["CAD"]}}</td>
              <td class="text-left" >{{chf["SGD"]}}</td>
               <td class="text-left" >{{chf["EUR"]}}</td>
@@ -120,8 +126,9 @@
         <tr
         >
           <td class="font-weight-bold">NZD</td>
-          <td class="text-left" >{{nzd["AUD"]}}</td>
+         
            <td class="text-left" >{{nzd["USD"]}}</td>
+            <td class="text-left" >{{nzd["AUD"]}}</td>
             <td class="text-left" >{{nzd["CAD"]}}</td>
              <td class="text-left" >{{nzd["SGD"]}}</td>
               <td class="text-left" >{{nzd["EUR"]}}</td>
@@ -131,16 +138,16 @@
         </tr>
         <tr>
           <td class="text-center">Median</td>
-          <td class="text-left">{{currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"]}}</td>
-          <td class="text-left">{{currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"]}}</td>
-          <td class="text-left">{{currency["USDCAD"]+aud["CAD"]+cad["CAD"]+sgd["CAD"]+eur["CAD"]+chf["CAD"]+nzd["CAD"]}}</td>
-          <td class="text-left">{{currency["USDSGD"]+aud["SGD"]+cad["SGD"]+sgd["SGD"]+eur["SGD"]+chf["SGD"]+nzd["SGD"]}}</td>
-          <td class="text-left">{{currency["USDEUR"]+aud["EUR"]+cad["EUR"]+sgd["EUR"]+eur["EUR"]+chf["EUR"]+nzd["EUR"]}}</td>
-          <td class="text-left">{{currency["USDCHF"]+aud["CHF"]+cad["CHF"]+sgd["CHF"]+eur["CHF"]+chf["CHF"]+nzd["CHF"]}}</td>
-          <td class="text-left">{{currency["USDNZD"]+aud["NZD"]+cad["NZD"]+sgd["NZD"]+eur["NZD"]+chf["NZD"]+nzd["NZD"]}}</td>
+          <td class="text-left">{{((currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"])/7).toFixed(5)}}</td>
+          <td class="text-left">{{((currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"])/7).toFixed(5)}}</td>
+          <td class="text-left">{{((currency["USDCAD"]+aud["CAD"]+cad["CAD"]+sgd["CAD"]+eur["CAD"]+chf["CAD"]+nzd["CAD"])/7).toFixed(5)}}</td>
+          <td class="text-left">{{((currency["USDSGD"]+aud["SGD"]+cad["SGD"]+sgd["SGD"]+eur["SGD"]+chf["SGD"]+nzd["SGD"])/7).toFixed(5)}}</td>
+          <td class="text-left">{{((currency["USDEUR"]+aud["EUR"]+cad["EUR"]+sgd["EUR"]+eur["EUR"]+chf["EUR"]+nzd["EUR"])/7).toFixed(5)}}</td>
+          <td class="text-left">{{((currency["USDCHF"]+aud["CHF"]+cad["CHF"]+sgd["CHF"]+eur["CHF"]+chf["CHF"]+nzd["CHF"])/7).toFixed(5)}}</td>
+          <td class="text-left">{{((currency["USDNZD"]+aud["NZD"]+cad["NZD"]+sgd["NZD"]+eur["NZD"]+chf["NZD"]+nzd["NZD"])/7).toFixed(5)}}</td>
 
         <td class="font-weight-bold">
-          {{(((currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"])+(currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"])+(currency["USDCAD"]+aud["CAD"]+cad["CAD"]+sgd["CAD"]+eur["CAD"]+chf["CAD"]+nzd["CAD"])+(currency["USDSGD"]+aud["SGD"]+cad["SGD"]+sgd["SGD"]+eur["SGD"]+chf["SGD"]+nzd["SGD"])+(currency["USDEUR"]+aud["EUR"]+cad["EUR"]+sgd["EUR"]+eur["EUR"]+chf["EUR"]+nzd["EUR"])+(currency["USDCHF"]+aud["CHF"]+cad["CHF"]+sgd["CHF"]+eur["CHF"]+chf["CHF"]+nzd["CHF"])+(currency["USDNZD"]+aud["NZD"]+cad["NZD"]+sgd["NZD"]+eur["NZD"]+chf["NZD"]+nzd["NZD"]))/7).toFixed(5)}}
+          {{((((currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"])/7)+((currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"])/7)+((currency["USDCAD"]+aud["CAD"]+cad["CAD"]+sgd["CAD"]+eur["CAD"]+chf["CAD"]+nzd["CAD"])/7)+((currency["USDSGD"]+aud["SGD"]+cad["SGD"]+sgd["SGD"]+eur["SGD"]+chf["SGD"]+nzd["SGD"])/7)+((currency["USDEUR"]+aud["EUR"]+cad["EUR"]+sgd["EUR"]+eur["EUR"]+chf["EUR"]+nzd["EUR"])/7)+((currency["USDCHF"]+aud["CHF"]+cad["CHF"]+sgd["CHF"]+eur["CHF"]+chf["CHF"]+nzd["CHF"])/7)+((currency["USDNZD"]+aud["NZD"]+cad["NZD"]+sgd["NZD"]+eur["NZD"]+chf["NZD"]+nzd["NZD"])/7))/7).toFixed(5)}}
         </td>
         </tr>
         <!-- <tr
