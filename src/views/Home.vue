@@ -147,7 +147,7 @@
                 <td class="text-left" >{{nzd["NZD"]}}</td>
           
         </tr>
-        <tr v-if="$store.state.crash==true">
+        <tr v-if="$store.state.crash==false">
           <td class="text-center">Median</td>
           <td class="text-left">{{((currency["USDAUD"]+aud["AUD"]+cad["AUD"]+sgd["AUD"]+eur["AUD"]+chf["AUD"]+nzd["AUD"])/7).toFixed(5)}}</td>
           <td class="text-left">{{((currency["USDUSD"]+aud["USD"]+cad["USD"]+sgd["USD"]+eur["USD"]+chf["USD"]+nzd["USD"])/7).toFixed(5)}}</td>
